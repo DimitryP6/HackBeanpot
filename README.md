@@ -1,0 +1,2 @@
+# HackBeanpot
+First hackathon

@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://hti2ovtgnpty"]
+[gd_scene load_steps=7 format=3 uid="uid://hti2ovtgnpty"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_aaj2i"]
-[ext_resource type="Texture2D" uid="uid://ctjg7fqo0xi1m" path="res://art/start_button.png" id="2_3e7vy"]
 [ext_resource type="Texture2D" uid="uid://b1r1vca8tnw1q" path="res://art/card.png" id="2_pudqp"]
 
 [sub_resource type="FontFile" id="FontFile_rtwea"]
@@ -32,23 +31,6 @@ cache/0/16/0/scale = 1.0
 font = SubResource("FontFile_tcqvy")
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontFile" id="FontFile_la1te"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/48/0/ascent = 0.0
-cache/0/48/0/descent = 0.0
-cache/0/48/0/underline_position = 0.0
-cache/0/48/0/underline_thickness = 0.0
-cache/0/48/0/scale = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_vkdp1"]
-font = SubResource("FontFile_la1te")
-font_size = 48
-font_color = Color(0, 0, 0, 1)
-
 [node name="Calendar" type="Node2D"]
 script = ExtResource("1_aaj2i")
 
@@ -77,10 +59,10 @@ texture_pressed = ExtResource("2_pudqp")
 texture_hover = ExtResource("2_pudqp")
 
 [node name="Symbol" type="Label" parent="Background"]
-offset_left = 369.0
-offset_top = 488.0
-offset_right = 639.0
-offset_bottom = 576.0
+offset_left = 363.0
+offset_top = 421.0
+offset_right = 633.0
+offset_bottom = 509.0
 text = "Testing"
 label_settings = SubResource("LabelSettings_yxrsb")
 
@@ -92,37 +74,11 @@ offset_bottom = 252.0
 text = "Testing"
 label_settings = SubResource("LabelSettings_lpyrt")
 
-[node name="StartButton" type="TextureButton" parent="Background"]
-offset_left = 379.0
-offset_top = 293.0
-offset_right = 601.0
-offset_bottom = 377.0
-texture_normal = ExtResource("2_3e7vy")
-texture_pressed = ExtResource("2_3e7vy")
-texture_hover = ExtResource("2_3e7vy")
-
-[node name="Start" type="Label" parent="Background"]
-layout_mode = 0
-offset_left = 382.0
-offset_top = 411.0
-offset_right = 630.0
-offset_bottom = 469.0
-text = "Testing"
-label_settings = SubResource("LabelSettings_vkdp1")
-
 [node name="DelayTime" type="Timer" parent="."]
-wait_time = 0.75
-one_shot = true
+wait_time = 0.5
 
 [node name="ReactTime" type="Timer" parent="."]
-one_shot = true
-
-[node name="StartTimer" type="Timer" parent="."]
-wait_time = 3.95
-one_shot = true
 
 [connection signal="pressed" from="Background/Card" to="." method="_on_card_pressed"]
-[connection signal="pressed" from="Background/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="DelayTime" to="." method="_on_delay_time_timeout"]
 [connection signal="timeout" from="ReactTime" to="." method="_on_react_time_timeout"]
-[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://hti2ovtgnpty"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_aaj2i"]
+[ext_resource type="Texture2D" uid="uid://b1r1vca8tnw1q" path="res://art/card.png" id="2_pudqp"]
+
+[sub_resource type="FontFile" id="FontFile_rtwea"]
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_yxrsb"]
+font = SubResource("FontFile_rtwea")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontFile" id="FontFile_tcqvy"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_lpyrt"]
+font = SubResource("FontFile_tcqvy")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Calendar" type="Node2D"]
+script = ExtResource("1_aaj2i")
+
+[node name="Card" type="TextureButton" parent="."]
+offset_left = -542.0
+offset_top = -461.0
+offset_right = 862.0
+offset_bottom = 940.0
+texture_normal = ExtResource("2_pudqp")
+texture_pressed = ExtResource("2_pudqp")
+texture_hover = ExtResource("2_pudqp")
+metadata/_edit_group_ = true
+
+[node name="Symbol" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 487.0
+offset_right = 294.0
+offset_bottom = 581.0
+label_settings = SubResource("LabelSettings_yxrsb")
+metadata/_edit_group_ = true
+
+[node name="DelayTime" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ReactTime" type="Timer" parent="."]
+
+[node name="Result" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 557.0
+offset_right = 321.0
+offset_bottom = 625.0
+label_settings = SubResource("LabelSettings_lpyrt")
+metadata/_edit_group_ = true
+
+[connection signal="pressed" from="Card" to="." method="_on_card_pressed"]
+[connection signal="timeout" from="DelayTime" to="." method="_on_delay_time_timeout"]
+[connection signal="timeout" from="ReactTime" to="." method="_on_react_time_timeout"]

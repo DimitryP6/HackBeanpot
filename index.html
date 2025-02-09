@@ -79,7 +79,7 @@
             }
 
             // Send data to the backend
-            const response = await fetch("/submit", {
+            const response = await fetch("http://127.0.0.1:5000/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -89,7 +89,7 @@
 
             if (response.ok) {
                 // Redirect to the Godot game with user data as URL parameters
-                window.location.href = `game.html?username=${encodeURIComponent(username)}&destination=${encodeURIComponent(destination)}&tripDate=${encodeURIComponent(tripDate)}`;
+                window.location.href = `game_index.html?username=${encodeURIComponent(username)}&destination=${encodeURIComponent(destination)}&tripDate=${encodeURIComponent(tripDate)}`;
             } else {
                 alert("Failed to submit data. Please try again.");
             }

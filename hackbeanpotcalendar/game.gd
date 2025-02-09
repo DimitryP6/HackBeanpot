@@ -8,6 +8,8 @@ extends State
 @onready var symbol_timer = get_parent().get_parent().get_node("ReactTime")
 @onready var start_timer = get_parent().get_parent().get_node("StartTimer")
 @onready var start_countdown = get_parent().get_parent().get_node("Background/Start")
+#@onready var deer = get_parent().get_parent().get_node("Background/Symbol2/Deer")
+#@onready var car = get_parent().get_parent().get_node("Background/Symbol2/Deer")
 
 
 # Game variables

@@ -19,8 +19,9 @@ func _process(delta):
 		current_state.update(delta)
 		
 func on_child_transition(state : State, new_state_name : String):
-	var new_state = states.get(new_state_name.to_lower())
+	print("WAZZUP")
 	state.exit()
+	var new_state = states.get(new_state_name.to_lower())
 	new_state.enter()
 	if state != current_state:
 		return

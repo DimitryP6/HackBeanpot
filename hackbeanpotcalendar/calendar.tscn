@@ -1,51 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://hti2ovtgnpty"]
+[gd_scene load_steps=8 format=3 uid="uid://hti2ovtgnpty"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_aaj2i"]
 [ext_resource type="Texture2D" uid="uid://ctjg7fqo0xi1m" path="res://art/start_button.png" id="2_3e7vy"]
 [ext_resource type="Texture2D" uid="uid://b1r1vca8tnw1q" path="res://art/card.png" id="2_pudqp"]
-
-[sub_resource type="FontFile" id="FontFile_rtwea"]
-cache/0/48/0/ascent = 0.0
-cache/0/48/0/descent = 0.0
-cache/0/48/0/underline_position = 0.0
-cache/0/48/0/underline_thickness = 0.0
-cache/0/48/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[ext_resource type="FontFile" uid="uid://c7k6x37dblel2" path="res://art/RomeoDN.ttf" id="3_rav3y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yxrsb"]
-font = SubResource("FontFile_rtwea")
+font = ExtResource("3_rav3y")
 font_size = 48
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontFile" id="FontFile_tcqvy"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_lpyrt"]
-font = SubResource("FontFile_tcqvy")
+font = ExtResource("3_rav3y")
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontFile" id="FontFile_la1te"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/48/0/ascent = 0.0
-cache/0/48/0/descent = 0.0
-cache/0/48/0/underline_position = 0.0
-cache/0/48/0/underline_thickness = 0.0
-cache/0/48/0/scale = 1.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_vkdp1"]
-font = SubResource("FontFile_la1te")
+font = ExtResource("3_rav3y")
 font_size = 48
 font_color = Color(0, 0, 0, 1)
 
@@ -77,6 +47,7 @@ texture_pressed = ExtResource("2_pudqp")
 texture_hover = ExtResource("2_pudqp")
 
 [node name="Symbol" type="Label" parent="Background"]
+layout_mode = 0
 offset_left = 369.0
 offset_top = 488.0
 offset_right = 639.0
@@ -85,6 +56,7 @@ text = "Testing"
 label_settings = SubResource("LabelSettings_yxrsb")
 
 [node name="Result" type="Label" parent="Background"]
+layout_mode = 0
 offset_left = 360.0
 offset_top = 183.0
 offset_right = 635.0
@@ -93,6 +65,7 @@ text = "Testing"
 label_settings = SubResource("LabelSettings_lpyrt")
 
 [node name="StartButton" type="TextureButton" parent="Background"]
+layout_mode = 0
 offset_left = 379.0
 offset_top = 293.0
 offset_right = 601.0
